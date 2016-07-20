@@ -1,0 +1,18 @@
+*{
+	margin:0;
+	padding:0;
+}
+.container{
+	padding-top:40px;
+}
+#tab-title{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+#tab-content{
+	padding-top:15px;
+	padding-bottom:15px;
+}
+#homepage{
+	font-size:48px;
+}
