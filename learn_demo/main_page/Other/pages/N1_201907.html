@@ -37,9 +37,11 @@
                 <div id="collapseOne" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <!-- 按钮触发模态框 -->
-                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                            {{questionNo}}
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"
+                                id="btn_question1" v-for="(item,index) in question1" @click="getSelectedValue(item)">
+                            {{item.questionNo}}
                         </button>
+
                         <!-- 模态框（Modal） -->
                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                              aria-hidden="true">
@@ -50,36 +52,37 @@
                                             &times;
                                         </button>
                                         <h4 class="modal-title" id="myModalLabel">
-                                            1.あの態度には<span class="bg-primary">猛烈</span>に腹が立った。
+                                            {{selectedQuestion.question_pre}}<span
+                                                class="bg-primary">{{selectedQuestion.question_keyword}}</span>{{selectedQuestion.question_suf}}
                                         </h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="optionsRadios" id="optionsRadios1"
-                                                       value="option1" checked> 1 もれつ
+                                                       value="option1" checked>{{selectedQuestion.option1}}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                                       value="option2">2 きょうれつ
+                                                       value="option2">{{selectedQuestion.option2}}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                                       value="option3">3 きょれつ
+                                                       value="option3">{{selectedQuestion.option3}}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
                                                 <input type="radio" name="optionsRadios" id="optionsRadios4"
-                                                       value="option4">4 もうれつ
+                                                       value="option4">{{selectedQuestion.option4}}
                                             </label>
                                         </div>
                                         <span class="label label-success hidden">成功标签</span>
-                                        <span class="label label-info">4</span>
+                                        <span class="label label-info">{{selectedQuestion.answer}}</span>
                                         <span class="label label-warning">警告标签</span>
                                         <span class="label label-danger">危险标签</span>
                                     </div>
@@ -365,17 +368,63 @@
 
 
 <script>
-    const app = new Vue({
+    const vm = new Vue({
         el: "#panelPart1",
         data: {
-            questionNo: "1"
+            selectedQuestion:{
+
+            },
+            question1: [{
+                "questionNo": "1",
+                "question_pre": "1.あの態度には",
+                "question_keyword": "猛烈",
+                "question_suf": "に腹が立った。",
+                "option1": "1 もれつ",
+                "option2": "2 きょうれつ",
+                "option3": "3 きょれつ",
+                "option4": "4 もうれつ",
+                "answer": 4
+            },
+                {
+                    "questionNo": "2",
+                    "question_pre": "2.あの態度には",
+                    "question_keyword": "猛烈2",
+                    "question_suf": "に腹が立った。2",
+                    "option1": "1 もれつ2",
+                    "option2": "2 きょうれつ2",
+                    "option3": "3 きょれつ2",
+                    "option4": "4 もうれつ2",
+                    "answer": 42
+                }],
+            question2: [],
+            question3: [],
+            question4: [],
+            question5: [],
+            question6: [],
+            question7: [],
+        },
+        mounted:function(){
+            this.getJsonInfo();
         },
         methods: {
-            colorChange: function () {
-                this.isClass1 = !this.isClass1
+            getJsonInfo: function () {
+                let requestURL = '../resources/N1_201907.json';
+                //创建一个HTTP请求对象
+                let request = new XMLHttpRequest();
+                //使用open打开一个新请求
+                request.open('GET', requestURL);
+                request.responseType = 'text';
+                request.send();
+
+                request.onload = function () {
+                    let result = request.response;
+                    let jsonObject = JSON.parse(result);
+                    vm.question1=jsonObject.part1_question1;
+                    console.log(this.question1);
+                };
             },
-            setClasses: function () {
-                return {class1: this.isClass1, class2: this.isClass2}
+            getSelectedValue:function (item) {
+                this.selectedQuestion=item;
             }
         }
     })
