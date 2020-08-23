@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>201907</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <link rel="stylesheet" href="../css/N1_201907.css">
+</head>
+</head>
+<body>
+<a href="AddExam.html">add</a>
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active">
+        <a href="#part1" data-toggle="tab">
+            第一部分　言語知識（文字、語彙、文法）
+        </a>
+    </li>
+    <li><a href="#part2" data-toggle="tab">第二部分　読解</a></li>
+    <li><a href="#part3" data-toggle="tab">第三部分　聴解</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="part1">
+        <div class="panel-group" id="panelPart1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseOne">
+                            問題1
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <!-- 按钮触发模态框 -->
+                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            {{questionNo}}
+                        </button>
+                        <!-- 模态框（Modal） -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            1.あの態度には<span class="bg-primary">猛烈</span>に腹が立った。
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1"
+                                                       value="option1" checked> 1 もれつ
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2"
+                                                       value="option2">2 きょうれつ
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios3"
+                                                       value="option3">3 きょれつ
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" id="optionsRadios4"
+                                                       value="option4">4 もうれつ
+                                            </label>
+                                        </div>
+                                        <span class="label label-success hidden">成功标签</span>
+                                        <span class="label label-info">4</span>
+                                        <span class="label label-warning">警告标签</span>
+                                        <span class="label label-danger">危险标签</span>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">閉じる
+                                        </button>
+                                        <button type="button" class="btn btn-primary">
+                                            確認
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseTwo">
+                            問題2
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseThree">
+                            問題3
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseFour">
+                            問題4
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseFive">
+                            問題5
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseSix">
+                            問題6
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart1"
+                           href="#collapseSeven">
+                            問題7
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="part2">
+        <div class="panel-group" id="panelPart2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseEight">
+                            問題8
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseNine">
+                            問題9
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseNine" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseTen">
+                            問題10
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTen" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseEleven">
+                            問題11
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseEleven" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseTwelve">
+                            問題12
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwelve" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart2"
+                           href="#collapseThirteen">
+                            問題13
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThirteen" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="part3">
+        <div class="panel-group" id="panelPart3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart3"
+                           href="#collapseListen1">
+                            問題1
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseListen1" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart3"
+                           href="#collapseListen2">
+                            問題2
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseListen2" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart3"
+                           href="#collapseListen3">
+                            問題3
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseListen3" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart3"
+                           href="#collapseListen4">
+                            問題4
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseListen4" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#panelPart3"
+                           href="#collapseListen5">
+                            問題5
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseListen5" class="panel-collapse collapse">
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const app = new Vue({
+        el: "#panelPart1",
+        data: {
+            questionNo: "1"
+        },
+        methods: {
+            colorChange: function () {
+                this.isClass1 = !this.isClass1
+            },
+            setClasses: function () {
+                return {class1: this.isClass1, class2: this.isClass2}
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

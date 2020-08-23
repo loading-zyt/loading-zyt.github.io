@@ -106,7 +106,7 @@ avgNum(2, 3, 4, 5);	//3.5
 //求数组平均值
 function avgArray(arr){
 	var sum = 0;
-	for (var i = 0 j = arr.length; i < j; i++) {
+	for (var i = 0, j = arr.length; i < j; i++) {
 		sum += arr[i];
 	};
 	return sum / arr.length;
